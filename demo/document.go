@@ -1,4 +1,4 @@
-package document
+package demo
 
 import (
 	"context"
@@ -94,6 +94,7 @@ func Delete(id string) {
 	res, err := Client.Delete().
 		Index(index).
 		Id(id).
+		Refresh("wait_for").
 		Do(ctx)
 	if err != nil {
 		panic(err)
