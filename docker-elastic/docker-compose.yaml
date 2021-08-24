@@ -23,6 +23,9 @@ services:
       - ../data/ml-latest-small:/usr/share/logstash/data/nfs:ro
     ports:
       - "5044:5044"
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
     networks:
       - es7net
   kibana:
